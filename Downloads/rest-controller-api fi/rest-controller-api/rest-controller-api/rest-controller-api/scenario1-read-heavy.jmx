@@ -1,0 +1,54 @@
+<!-- Backend Listener → InfluxDB 2.x -->
+<BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener (InfluxDB v2)" enabled="true">
+  <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.HttpSimpleInfluxDBBackendListenerClient</stringProp>
+  <elementProp name="arguments" elementType="Arguments">
+    <collectionProp name="Arguments.arguments">
+      <elementProp name="influxdbUrl" elementType="Argument">
+        <stringProp name="Argument.name">influxdbUrl</stringProp>
+        <stringProp name="Argument.value">${__P(INFLUX_URL,http://localhost:8086/api/v2/write)}</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="influxdbToken" elementType="Argument">
+        <stringProp name="Argument.name">influxdbToken</stringProp>
+        <stringProp name="Argument.value">${__P(INFLUX_TOKEN,perf-super-token)}</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="influxdbOrganization" elementType="Argument">
+        <stringProp name="Argument.name">influxdbOrganization</stringProp>
+        <stringProp name="Argument.value">${__P(INFLUX_ORG,perf-org)}</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="influxdbBucket" elementType="Argument">
+        <stringProp name="Argument.name">influxdbBucket</stringProp>
+        <stringProp name="Argument.value">${__P(INFLUX_BUCKET,perf-metrics)}</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="measurement" elementType="Argument">
+        <stringProp name="Argument.name">measurement</stringProp>
+        <stringProp name="Argument.value">${__P(INFLUX_MEAS,jmeter)}</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="summaryOnly" elementType="Argument">
+        <stringProp name="Argument.name">summaryOnly</stringProp>
+        <stringProp name="Argument.value">false</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="samplersRegex" elementType="Argument">
+        <stringProp name="Argument.name">samplersRegex</stringProp>
+        <stringProp name="Argument.value">.*</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="useRegexForSamplerList" elementType="Argument">
+        <stringProp name="Argument.name">useRegexForSamplerList</stringProp>
+        <stringProp name="Argument.value">true</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+      <elementProp name="testTitle" elementType="Argument">
+        <stringProp name="Argument.name">testTitle</stringProp>
+        <stringProp name="Argument.value">${__P(testTitle,Scenario1-READ)}</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+      </elementProp>
+    </collectionProp>
+  </elementProp>
+</BackendListener>
+<hashTree/>
